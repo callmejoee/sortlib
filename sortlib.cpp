@@ -1,9 +1,8 @@
 #include <iostream>
 #include <algorithm>
 #include <cstdlib>
-#include <chrono>
+#include <ctime>
 using namespace std;
-using namespace std::chrono;
 
 #define SIZE 300
 
