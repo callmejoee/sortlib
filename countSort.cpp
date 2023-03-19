@@ -1,9 +1,8 @@
 #include <iostream>
 #include <algorithm>
 #include <cstdlib>
-#include <chrono>
+#include <ctime>
 using namespace std;
-using namespace std::chrono;
 
 //Count Sorting algorithm impelementaion 
 template<typename T>
@@ -75,77 +74,80 @@ int main () {
     // cout << "The float arrray after sorting with Count-Sort:\n";
     // display (s,arrFloat);
 
+    //to calculate the time:
+    clock_t start_time,end_time;
+    double running_time;
 
     cout << "\nHere're some test cases on random generated arrays of different sizes:\n\n";
     int arr200 [200];
     autoGen(200,arr200);
-    auto start = high_resolution_clock::now(); //to calculate the time:    
+    start_time = clock();     
     countSort (200,arr200);
-    auto end = high_resolution_clock::now();
+    end_time = clock();
     if (test (200,arr200)) cout <<"The array of size 200 is sorted\n";
     else cout << "The array of size 200 is not sorted\n";
-    auto duration = duration_cast<microseconds>(end - start);
-    cout << "The running time spent on a random array of size 200 sorted with Count-Sort algorithm is: " << duration.count () << " microseconds\n\n";
+    running_time = (double)(end_time - start_time) / CLOCKS_PER_SEC; 
+    cout << "The running time spent on a random array of size 200 sorted with Counting-Sort algorithm is: " << running_time << " seconds\n\n";
 
     int arr500 [500];       
     autoGen(500,arr500);
-    start = high_resolution_clock::now();
+    start_time = clock();
     countSort (500,arr500);
-    end = high_resolution_clock::now();
+    end_time = clock();
     if (test (500,arr500)) cout <<"The array of size 500 is sorted\n";
     else cout << "The array of size 500 is not sorted\n";
-    duration = duration_cast<microseconds>(end - start);
-    cout << "The running time spent on a random array of size 500 sorted with Count-Sort algorithm is: " << duration.count () << " microseconds\n\n";
+    running_time = (double)(end_time - start_time) / CLOCKS_PER_SEC; 
+    cout << "The running time spent on a random array of size 500 sorted with Counting-Sort algorithm is: " << running_time << " seconds\n\n";
 
     int arr1000 [1000];
     autoGen(1000,arr1000);
-    start = high_resolution_clock::now();
+    start_time = clock();
     countSort (1000,arr1000);
-    end = high_resolution_clock::now();
+    end_time = clock();
     if (test (1000,arr1000)) cout <<"The array of size 1000 is sorted\n";
     else cout << "The array of size 1000 is not sorted\n";
-    duration = duration_cast<microseconds>(end - start);
-    cout << "The running time spent on a random array of size 1000 sorted with Count-Sort algorithm is: " << duration.count () << " microseconds\n\n";
+    running_time = (double)(end_time - start_time) / CLOCKS_PER_SEC; 
+    cout << "The running time spent on a random array of size 1000 sorted with Counting-Sort algorithm is: " << running_time << " seconds\n\n";
 
     int arr5000 [5000];
     autoGen(5000,arr5000);
-    start = high_resolution_clock::now();
+    start_time = clock();
     countSort (5000,arr5000);
-    end = high_resolution_clock::now();
+    end_time = clock();
     if (test (5000,arr5000)) cout <<"The array of size 5000 is sorted\n";
     else cout << "The array of size 5000 is not sorted\n";
-    duration = duration_cast<microseconds>(end - start);
-    cout << "The running time spent on a random array of size 5000 sorted with Count-Sort algorithm is: " << duration.count () << " microseconds\n\n";
+    running_time = (double)(end_time - start_time) / CLOCKS_PER_SEC; 
+    cout << "The running time spent on a random array of size 5000 sorted with Counting-Sort algorithm is: " << running_time << " seconds\n\n";
 
     int arr10000 [10000];   
     autoGen(10000,arr10000);
-    start = high_resolution_clock::now();
+    start_time = clock();
     countSort (10000,arr10000);
-    end = high_resolution_clock::now();
+    end_time = clock();
     if (test (10000,arr10000)) cout <<"The array of size 10000 is sorted\n";
     else cout << "The array of size 10000 is not sorted\n";
-    duration = duration_cast<microseconds>(end - start);
-    cout << "The running time spent on a random array of size 10000 sorted with Count-Sort algorithm is: " << duration.count () << " microseconds\n\n";
+    running_time = (double)(end_time - start_time) / CLOCKS_PER_SEC; 
+    cout << "The running time spent on a random array of size 10000 sorted with Counting-Sort algorithm is: " << running_time << " seconds\n\n";
     
     int arr20000 [20000];
     autoGen(20000,arr20000);
-    start = high_resolution_clock::now();
+    start_time = clock();
     countSort (20000,arr20000);
-    end = high_resolution_clock::now();
+    end_time = clock();
     if (test (20000,arr20000)) cout <<"The array of size 20000 is sorted\n";
     else cout << "The array of size 20000 is not sorted\n";
-    duration = duration_cast<microseconds>(end - start);
-    cout << "The running time spent on a random array of size 20000 sorted with Count-Sort algorithm is: " << duration.count () << " microseconds\n\n"; 
+    running_time = (double)(end_time - start_time) / CLOCKS_PER_SEC; 
+    cout << "The running time spent on a random array of size 20000 sorted with Counting-Sort algorithm is: " << running_time << " seconds\n\n";
 
     int arr50000 [50000];
     autoGen(50000,arr50000);
-    start = high_resolution_clock::now();
+    start_time = clock();
     countSort (50000,arr50000);
-    end = high_resolution_clock::now();
+    end_time = clock();
     if (test (50000,arr50000)) cout <<"The array of size 50000 is sorted\n";
     else cout << "The array of size 50000 is not sorted\n";
-    duration = duration_cast<microseconds>(end - start);
-    cout << "The running time spent on a random array of size 50000 sorted with Count-Sort algorithm is: " << duration.count() << " microseconds\n\n";
+    running_time = (double)(end_time - start_time) / CLOCKS_PER_SEC; 
+    cout << "The running time spent on a random array of size 50000 sorted with Counting-Sort algorithm is: " << running_time << " seconds\n\n";
     return 0;
 }
 
