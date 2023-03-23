@@ -250,13 +250,13 @@ int main() {
     cout << "Selection sort: \n";
     selectionSort(SIZE, arr);
     display(SIZE, arr);
-    
+
     int arrCount [SIZE];
     cout << "Unsorted Array" << endl;
-    disply (SIZE,arrCount);
-    cout << "Count sort: \n;
+    display (SIZE,arrCount);
+    cout << "Count sort: \n";
     countSort (SIZE,arrCount);
-     disply (SIZE,arrCount);
+    display (SIZE,arrCount);
 
     return 0;
 }
