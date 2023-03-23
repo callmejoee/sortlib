@@ -163,6 +163,13 @@ namespace sortlib{
             arr [i] = -size + rand() % (size - (-size)+1);
         }
     }
+    // fun to auto genrate an array for Counting Sort (Positive numbers only)
+    template <typename T>
+    void autoGen_countSort (int size, T arr[]) {
+        for (int i=0; i<size; i++) {
+            arr [i] = rand() % size; // values in the range from 0 to array size-1
+        }
+    }
     // fun to test whether an array is sorting or not
     template <typename T>
     bool test (int size, T arr[]) {
@@ -243,6 +250,13 @@ int main() {
     cout << "Selection sort: \n";
     selectionSort(SIZE, arr);
     display(SIZE, arr);
+    
+    int arrCount [SIZE];
+    cout << "Unsorted Array" << endl;
+    disply (SIZE,arrCount);
+    cout << "Count sort: \n;
+    countSort (SIZE,arrCount);
+     disply (SIZE,arrCount);
 
     return 0;
 }
