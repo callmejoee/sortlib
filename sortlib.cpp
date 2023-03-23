@@ -252,11 +252,12 @@ int main() {
     display(SIZE, arr);
 
     int arrCount [SIZE];
+    autoGen_countSort [SIZE, arrCount];
     cout << "Unsorted Array" << endl;
-    display (SIZE,arrCount);
+    display (SIZE, arrCount);
     cout << "Count sort: \n";
-    countSort (SIZE,arrCount);
-    display (SIZE,arrCount);
+    countSort (SIZE, arrCount);
+    display (SIZE, arrCount);
 
     return 0;
 }
