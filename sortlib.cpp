@@ -10,7 +10,7 @@ namespace sortlib{
     // Youssef Karam 20210480
     // Insertion sort and Shell sort
 
-    template <typename T> void InsertionSort (T arr[], int n)
+    template <typename T> void insertionSort (T arr[], int n)
     {
         for (int i = 1; i < n; i++)
         {
@@ -243,21 +243,56 @@ namespace sortlib{
 using namespace sortlib;
 
 int main() {
-    int arr[SIZE];
-    autoGen(SIZE, arr);
-    cout << "Unsorted Array" << endl;
-    display(SIZE, arr);
-    cout << "Selection sort: \n";
-    selectionSort(SIZE, arr);
-    display(SIZE, arr);
+    int insertionArr[SIZE], bubbleArr[SIZE], selectionArr[SIZE],
+     shellArr[SIZE], mergeArr[SIZE], quickArr[SIZE], countArr[SIZE];
+    autoGen(SIZE, selectionArr);
+    cout << "\n\nUnsorted Array" << endl;
+    display(SIZE, selectionArr);
+    cout << "\nSelection sort: \n\n";
+    selectionSort(SIZE, selectionArr);
+    display(SIZE, selectionArr);
 
-    int arrCount [SIZE];
-    autoGen_countSort [SIZE, arrCount];
-    cout << "Unsorted Array" << endl;
-    display (SIZE, arrCount);
-    cout << "Count sort: \n";
-    countSort (SIZE, arrCount);
-    display (SIZE, arrCount);
+    autoGen(SIZE, insertionArr);
+    cout << "\n\nUnsorted Array" << endl;
+    display(SIZE, insertionArr);
+    cout << "\nInsertion sort: \n\n";
+    insertionSort(insertionArr, SIZE);
+    display(SIZE, insertionArr);
+
+    autoGen(SIZE, bubbleArr);
+    cout << "\n\nUnsorted Array" << endl;
+    display(SIZE, bubbleArr);
+    cout << "\nBubble sort: \n\n";
+    bubbleSort(SIZE, bubbleArr);
+    display(SIZE, bubbleArr);
+
+    autoGen(SIZE, shellArr);
+    cout << "\n\nUnsorted Array" << endl;
+    display(SIZE, shellArr);
+    cout << "\nShell sort: \n\n";
+    shell_sort(shellArr, SIZE);
+    display(SIZE, shellArr);
+
+    autoGen(SIZE, mergeArr);
+    cout << "\n\nUnsorted Array" << endl;
+    display(SIZE, mergeArr);
+    cout << "\nMerge sort: \n\n";
+    mergeSort(mergeArr, 0, SIZE);
+    display(SIZE, mergeArr);
+
+    autoGen(SIZE,  quickArr);
+    cout << "\n\nUnsorted Array" << endl;
+    display(SIZE,  quickArr);
+    cout << "\nQuick sort: \n\n";
+    quickSort(quickArr, 0, SIZE);
+    display(SIZE,  quickArr);
+
+    autoGen_countSort(SIZE, countArr);
+    cout << "\n\nUnsorted Array" << endl;
+    display(SIZE, countArr);
+    cout << "\nCount sort: \n\n";
+    countSort(SIZE, countArr);
+    display(SIZE, countArr);
 
     return 0;
 }
